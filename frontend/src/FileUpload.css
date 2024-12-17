@@ -1,0 +1,319 @@
+/* FileUpload.css */
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.underlined {
+    text-decoration: underline;
+  }
+  
+
+.body-background {
+    background-color: #2e014d; /* Light blue background */
+    min-height: 100vh; /* Ensure full height */
+    padding: 20px; /* Add padding on top and bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box1 {
+    width: 100%;
+    background-color: #2e014d;
+    padding: 2rem 0 2rem 2rem; /* Add padding around the text */
+    margin-right: auto; /* Center the box horizontally */
+}
+
+
+.circle1 {
+    width: 150px;          /* Set width of the circle */
+    height: 150px;         /* Set height of the circle, same as width for a perfect circle */
+    background-color: #3498db; /* Set the background color */
+    border-radius: 50%;
+    position: absolute;
+    top: 215px;
+    left: 75rem;
+    z-index: 2;
+    transform: translate(-50%, -50%); /* Center the circle within the path */
+    animation: breathe 3s infinite ease-in-out; /* Infinite animation */
+}
+
+.circle2 {
+    width: 180px;          /* Set width of the circle */
+    height: 180px;         /* Set height of the circle, same as width for a perfect circle */
+    background-color: #ffffff; /* Set the background color */
+    border-radius: 50%;
+    position: absolute;
+    top: 215px;
+    left: 65rem; 
+    transform: translate(-50%, -50%); /* Center the circle within the path */
+    animation: breathe 3s infinite ease-in-out; /* Infinite animation */   /* This makes the div circular */
+}
+
+/* Animation for circular motion */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1); /* Normal size */
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2); /* Expanded size */
+        opacity: 1; /* Slightly brighter */
+    }
+}
+
+.logo-image{
+    width: 22%;
+    height: auto;
+    position: absolute;
+    /* padding: 4rem 2rem 0 0rem; */
+    top: 100px;
+    left: 65rem;
+    z-index: 3;
+}
+
+.first-text {
+    color: white; /* Set the text color to white */
+    font-family: "Roboto Serif", serif;
+    font-optical-sizing: auto;
+    padding: 7rem 40rem 2rem 0; /* Use a clean and modern font */
+    font-size: 6rem; /* Increase the font size */
+    /* font-weight: bold; */
+    align-items:flex-start; /* Make the text bold */
+    letter-spacing: 2px; /* Add space between letters */
+    position:relative; /* Remove the default margin */
+}
+
+.second-text {
+    color: white; /* Set the text color to white */
+    font-family: "Roboto Serif", serif;
+    font-optical-sizing: auto;
+    padding: 1rem 8rem 0 12rem; /* Use a clean and modern font */
+    font-size: 30px; /* Increase the font size */
+    position: relative;
+    letter-spacing: 2px; /* Add space between letters */
+    margin: 0; /* Remove the default margin */
+}
+
+.third-text {
+    color: white; /* Set the text color to white */
+    font-family: 'Arial', sans-serif;
+    padding: 0 8rem 9rem 12rem; /* Use a clean and modern font */
+    font-size: 30px; /* Increase the font size */
+    position: relative;
+    letter-spacing: 2px; /* Add space between letters */
+    margin: 0; /* Remove the default margin */
+}
+
+.line {
+    width: 100%; /* Full width of the screen */
+    height: 2px; /* Thickness of the line */
+    background-color: #fefefe;
+    padding: 2px;
+    border-radius: 5px; /* Color of the line */
+    margin: 10px 0 80px 0; /* Optional margin around the line */
+}
+
+
+.description {
+    color: white; /* Set the text color to white */
+    font-family: 'Arial', sans-serif;
+    padding: 0 8rem 3rem 33rem; /* Use a clean and modern font */
+    font-size: 30px; /* Increase the font size */
+    position: relative;
+    letter-spacing: 2px; /* Add space between letters */
+    margin: 0; /* Remove the default margin */
+}
+
+.description-next {
+    font-family: "Roboto Serif", serif;
+    color: white; /* Set the text color to white */
+    padding: 1rem 8rem 3rem 11rem; /* Use a clean and modern font */
+    font-size: 17px; /* Increase the font size */
+    position: relative;
+    letter-spacing: 2px;
+    text-align: center; /* Add space between letters */
+}
+
+.horizontal-list {
+    font-family: "Roboto Serif", serif;
+    display: flex; /* Use flexbox to arrange items horizontally */
+    gap: 40px;
+    padding-left: 7.6rem;
+    padding-bottom: 3rem; /* Space between the items */
+    align-items: center; /* Vertically center the items */
+}
+
+.list-item {
+    font-size: 200px;
+    color: #ffffff;
+    background-color: #2e014d; /* Background color for each point */
+    padding: 10px 20px; 
+    font-size: 22px; /* Font size for the points */
+}
+
+
+.box2 {
+    width: 30%;
+    background-color: #2e014d;
+    padding: 2rem 2rem 2rem 2rem; /* Add padding around the text */
+    margin-right: 40rem;
+    }
+
+/* Heading styles */
+.fourth-text {    
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    padding: 2rem 2 2rem 2rem 2rem;
+    color: #fdfdfd;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    margin-bottom: 30px;
+}
+
+input[type="file"] {
+    border: 1px solid #2e014d;
+    padding: 12px 0 17px 0;
+    /* width: 100%; */
+    position: relative;
+    font-size: 1rem;
+    background-color: #2e014d;
+    color: #ffffff;
+}
+
+button[type="submit"] {
+    background-color: #2e014d;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px ;
+    border-radius: 30px;
+    border: 2px solid #ffffff; /* Set the border width and color */
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transition for background and border */
+}
+
+button[type="submit"]:hover {
+    background-color: #4d016f; /* Slightly lighter shade on hover */
+    border-color: #f0f0f0; /* Change border color on hover */
+}
+
+button[type="submit"]:disabled {
+    background-color: #d6d6d6;
+    color: #a1a1a1;
+    border-color: #cccccc; /* Lighter border when disabled */
+    cursor: not-allowed;
+}
+
+
+.btn-primary {
+    background-color: #2e014d; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 30px; /* Rounded corners */
+    border-color: #ffffff;
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue when hovering */
+}
+
+.btn-primary:disabled {
+    background-color: #d6d6d6; /* Light grey when disabled */
+    color: #a1a1a1; /* Grey text when disabled */
+    cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+}
+
+
+
+.uploaded-files {
+    margin-top: 20px;
+}
+
+.file-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.file-container h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.file-name {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.extracted-data ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.extracted-data ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.btn-danger {
+    margin-top: 10px;
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    table th, table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
