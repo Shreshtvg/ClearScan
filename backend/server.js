@@ -5,6 +5,14 @@ const multer = require('multer');
 const { connectToDB, saveFileRecord, deleteFileRecord, fetchFileRecords, deleteallRecord } = require('./db');
 const { processFile } = require('./regexUtil');
 
+const corsOptions = {
+    origin: 'https://clearscanproject.vercel.app', // Your frontend URL
+    methods: ['GET', 'POST', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+  };
+  
+app.use(cors(corsOptions));
+  
 // Initialize app
 const app = express();
 
