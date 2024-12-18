@@ -9,37 +9,32 @@ const FileUpload = () => {
   const [uploading, setUploading] = useState(false); // State to track if the file is uploading
   const [error, setError] = useState(null); // State to store errors
 
-  useEffect(() => {
-    const fetchFiles = async () => {
-      try {
-        setUploading(true);
-  
-        const response = await fetch(`${API_BASE_URL}/scanned-files`);
-        const data = await response.json(); // Assuming backend sends an array of files
-        
-        // Format the files data
-        const formattedFiles = data.map((file) => ({
-          id: file.id, // Assuming the backend sends an `id`
-          name: file.name || file.title || "Unknown File", // Default to 'Unknown File' if no name/title
-          data: file.data
-        }));
-  
-        console.log("Formatted files:", formattedFiles);
-  
-        // Set the formatted files in state
-        setUploadedFiles(formattedFiles);
-        console.log(uploadedFiles);
-  
-        setUploading(false);
-      } catch (err) {
-        console.error("Error fetching files:", err);
-        setError("Failed to fetch files from the database.");
-        setUploading(false);
+useEffect(() => {
+  // Function to delete all files when the page reloads
+  const deleteAllFilesOnRefresh = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/delete-all`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to delete files on refresh.");
       }
-    };
-  
-    fetchFiles();
-  }, []);
+
+      console.log("All files deleted successfully.");
+      setUploadedFiles([]); // Clear the local state
+    } catch (err) {
+      console.error("Error deleting files on refresh:", err);
+    }
+  };
+
+  // Check if the page is being refreshed
+  window.addEventListener("beforeunload", deleteAllFilesOnRefresh);
+
+  // Cleanup the event listener
+  return () => window.removeEventListener("beforeunload", deleteAllFilesOnRefresh);
+}, []);
+
   
 
   const handleFileChange = (event) => {
