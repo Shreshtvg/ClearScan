@@ -11,10 +11,11 @@ const corsOptions = {
     allowedHeaders: ['Content-Type'],
   };
   
-app.use(cors(corsOptions));
+
   
 // Initialize app
 const app = express();
+app.use(cors(corsOptions));
 
 // Middleware
 app.use(cors());
