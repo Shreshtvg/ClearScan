@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./FileUpload.css";
 import picture1 from "./images/image-1.png";
+import API_BASE_URL from "./config";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null); // State to store the selected file
@@ -13,7 +14,7 @@ const FileUpload = () => {
       try {
         setUploading(true);
   
-        const response = await fetch("http://localhost:5000/scanned-files");
+        const response = await fetch(`${API_BASE_URL}/scanned-files`);
         const data = await response.json(); // Assuming backend sends an array of files
         
         // Format the files data
@@ -58,9 +59,9 @@ const FileUpload = () => {
     setUploading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/upload", {
-        method: "POST",
-        body: formData,
+      const response = await fetch(`${API_BASE_URL}/upload`, {
+      method: "POST",
+      body: formData,
       });
       
       if (!response.ok) {
@@ -81,13 +82,12 @@ const FileUpload = () => {
 
   const handleDelete = async (fileid, fileName) => {
     try {
-      const response = await fetch("http://localhost:5000/delete", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ fileName }),
+      const response = await fetch(`${API_BASE_URL}/delete`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fileName }),
       });
+
       
       if (!response.ok) {
         throw new Error("Error deleting file.");
